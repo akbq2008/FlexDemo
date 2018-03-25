@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+	<body>
+		<div class="wrap">
+			<h2>justify-content</h2>
+			<p>justify-content定义 :项目在主轴上的对其方式</p>
+			<h3>justify-content属性值</h3>
+			<p>justify-content: flex-start(默认值)| flex-end | center | space-between | space-around;</p>
+			<div id="container">
+				<div>text1</div>
+				<div>text2</div>
+				<div>text3</div>
+				<div>text4</div>
+			</div>
+			<div class="contentAlignment_wrap">
+				<select id="contentAlignment">
+					<option value="flex-start" selected>flex-start（默认值）：左对齐</option>
+					<option value="flex-end">flex-end 右对齐</option>
+					<option value="center">center 居中</option>
+					<option value="space-between ">space-between 两端对齐，项目之间的间隔相等</option>
+					<option value="space-around">space-around 每个项目的两侧间隔相等，项目之间的间隔比项目与边框的间隔大一倍</option>
+				</select>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var contentAlignment = document.getElementById("contentAlignment");
+			contentAlignment.onchange = function(evt) {
+				document.getElementById("container").style.justifyContent = evt.target.value;
+			};
+		</script>
+	</body>
+
+</html>

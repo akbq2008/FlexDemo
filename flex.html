@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<h2>flex</h2>
+			<p>flex定义 :是flex-grow,flex-shrink,flex-basis的简写，默认值为0,1,auto,后面2个参数可选</p>
+			<h3>flex属性值</h3>
+			<p>flex: 0 1 auto(默认值),flex-grow | flex-shrink（可选） | flex-basis（可选）。该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto</p>
+			<div id="container">
+				<div class="first">text1</div>
+				<div class="second">text2</div>
+				<div class="third">text3</div>
+				<div class="fourth">text4</div>
+			</div>
+			<table class="input_box">
+				<tr>
+					<th></th>
+					<th>第一个参数</th>
+					<th>第二个参数</th>
+					<th>第三个参数</th>
+				</tr>
+				<tr>
+					<td><label for="first">text1</label></td>
+					<td><input type="text" class="firstItem" placeholder="默认为0" /></td>
+					<td><input type="text" class="firstItem" placeholder="默认为1" /></td>
+					<td><input type="text" class="firstItem" placeholder="默认为auto,输入数字" /></td>
+				</tr>
+				<tr>
+					<td><label for="second">text2</label></td>
+					<td><input type="text" class="secondItem" placeholder="默认为0" /></td>
+					<td><input type="text" class="secondItem" placeholder="默认为1" /></td>
+					<td><input type="text" class="secondItem" placeholder="默认为auto,输入数字" /></td>
+				</tr>
+				<tr>
+					<td><label for="third">text3</label></td>
+					<td><input type="text" class="thirdItem" placeholder="默认为0" /></td>
+					<td><input type="text" class="thirdItem" placeholder="默认为1" /></td>
+					<td><input type="text" class="thirdItem" placeholder="默认为auto,输入数字" /></td>
+				</tr>
+				<tr>
+					<td><label for="fourth">text4</label></td>
+					<td><input type="text" class="fourthItem" placeholder="默认为0" /></td>
+					<td><input type="text" class="fourthItem" placeholder="默认为1" /></td>
+					<td><input type="text" class="fourthItem" placeholder="默认为auto,输入数字" /></td>
+				</tr>
+			</table>
+			<script type="text/javascript">
+				var doc = document,
+					first = doc.querySelectorAll(".firstItem"),
+					second = doc.querySelectorAll(".secondItem"),
+					third = doc.querySelectorAll(".thirdItem"),
+					fourth = doc.querySelectorAll(".fourthItem"),
+					firstDiv = doc.querySelector(".first"),
+					secondDiv = doc.querySelector(".second"),
+					thirdDiv = doc.querySelector(".third"),
+					fourthDiv = doc.querySelector(".fourth");
+
+				function inputVal(name, inputName) {
+					for(let i = 0, len = name.length; i < len; i++) {
+						var a = [0, 1, "auto"]; //给默认值
+						name[i].onkeyup = function() {
+							a[i] = this.value; //将输入的值进行覆盖
+							a[0] == 0 ? a[0] = 0 : a[0];
+							a[1] == 1 ? a[1] = 1 : a[1]; //判断是否为默认值
+							if(!a[2]) {
+								inputName.style.flex = a[0] + " " + a[1] + " auto";
+							} else {
+								if(a[2] != "auto") {
+									inputName.style.flex = a[0] + " " + a[1] + " " + a[2] + "px";
+								} else {
+									inputName.style.flex = a[0] + " " + a[1] + " auto";
+								}
+							}
+						}
+					};
+				}
+				inputVal(first, firstDiv);
+				inputVal(second, secondDiv);
+				inputVal(third, thirdDiv);
+				inputVal(fourth, fourthDiv);
+			</script>
+	</body>
+
+</html>

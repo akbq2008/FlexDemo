@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+	<body>
+		<div class="wrap">
+			<h2>flex-direction</h2>
+			<p>flex-direction定义 :flex-direction属性决定主轴的方向（即项目的排列方向）。</p>
+			<h3>flex-direction属性值</h3>
+			<p>flex-direction: row (默认值)| row-reverse | column | column-reverse;</p>
+			<img src="//cdn.suanliutudousi.com/18/3/21/flex-direction.png" alt="error" />
+			<div id="container">
+				<div>text1</div>
+				<div>text2</div>
+				<div>text3</div>
+				<div>text4</div>
+			</div>
+			<div class="contentAlignment_wrap">
+				<select id="contentAlignment">
+					<option value="row" selected>row（默认值）：主轴为水平方向，起点在左端。</option>
+					<option value="row-reverse">row-reverse主轴为水平方向，起点在右端。</option>
+					<option value="column">column主轴为垂直方向，起点在上沿</option>
+					<option value="column-reverse">column-reverse主轴为垂直方向，起点在下沿。</option>
+				</select>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var contentAlignment = document.getElementById("contentAlignment");
+			contentAlignment.onchange = function(evt) {
+				document.getElementById("container").style.flexDirection = evt.target.value;
+			};
+		</script>
+	</body>
+
+</html>

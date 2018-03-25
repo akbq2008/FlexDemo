@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+	<body>
+		<div class="wrap">
+			<h2>flex-flow</h2>
+			<p>flex-flow定义 :是flex-direction属性和flex-wrap属性的简写形式</p>
+			<h3>flex-flow属性值</h3>
+			<p>flex-flow:flex-direction || flex-wrap; column-reverse nowrap（默认值）</p>
+			<div id="container">
+				<div>text1</div>
+				<div>text2</div>
+				<div>text3</div>
+				<div>text4</div>
+				<div>text5</div>
+				<div>text6</div>
+				<div>text7</div>
+				<div>text8</div>
+				<div>text9</div>
+				<div>text10</div>
+				<div>text11</div>
+				<div>text12</div>
+				<div>text13</div>
+				<div>text14</div>
+				<div>text15</div>
+
+			</div>
+			<div class="flex_box">
+				<ul>
+					<li>flex-direction</li>
+					<li><button class="flex-direction checked" value="row">row（默认值）</button></li>
+					<li><button class="flex-direction" value="row-reverse">row-reverse</button></li>
+					<li><button class="flex-direction" value="column">column</button></li>
+					<li><button class="flex-direction" value="column-reverse">column-reverse</button></li>
+				</ul>
+				<ul>
+					<li>flex-wrap</li>
+					<li><button class="flex-wrap checked" value="nowrap">nowrap（默认值）</button></li>
+					<li><button class="flex-wrap" value="wrap">wrap</button></li>
+					<li><button class="flex-wrap" value="wrap-reverse">wrap-reverse</button></li>
+				</ul>
+			</div>
+
+			<p class="flex_flow"></p>
+		</div>
+		<script type="text/javascript">
+			var doc = document,
+				flex_direction = doc.querySelectorAll(".flex-direction"),
+				flex_wrap = doc.querySelectorAll(".flex-wrap"),
+				flex_flow = doc.querySelector(".flex_flow"),
+				container = doc.querySelector("#container"),
+				arr = ["row", "nowrap"];
+
+			flex_flow.innerHTML = "flex-flow:" + arr[0] + " " + arr[1];
+			flex_direction.forEach(function(item, index, array) {
+				item.onclick = function() {
+					if(!this.classList.contains("checked")) {
+						this.classList.add("checked");
+						for(var i = 0; i < array.length; i++) {
+							if(i != index) {
+								array[i].classList.remove("checked");
+							}
+						}
+					}
+					container.style.flexDirection = this.value;
+					flex_flow.innerHTML = "flex-flow:" + container.style.flexDirection + " " + arr[1];
+				}
+			})
+			flex_wrap.forEach(function(item, index, array) {
+				item.onclick = function() {
+					if(!this.classList.contains("checked")) {
+						this.classList.add("checked");
+						for(var i = 0; i < array.length; i++) {
+							if(i != index) {
+								array[i].classList.remove("checked");
+							}
+						}
+					}
+					container.style.flexWrap = this.value;
+					flex_flow.innerHTML = "flex-flow:" + arr[0] + " " + container.style.flexWrap;
+				}
+			})
+		</script>
+	</body>
+
+</html>

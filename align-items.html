@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<style type="text/css">
+			#container>div {
+				height: auto;
+			}
+			
+			#container .item {
+				height: 60px;
+			}
+			
+			.btn {
+				display: flex;
+				justify-content: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<h2>align-items</h2>
+			<p>align-items定义 :项目在交叉轴上的对其方式</p>
+			<h3>align-items属性值</h3>
+			<p>align-items: flex-start| flex-end | center | stretch (默认值)| baseline;</p>
+			<div id="container">
+				<div>text1</div>
+				<div>text2</div>
+				<div>text3</div>
+				<div>text4</div>
+			</div>
+			<div class="contentAlignment_wrap">
+				<select id="contentAlignment">
+					<option value="flex-start">flex-start 以交叉轴的起点对齐</option>
+					<option value="flex-end">flex-end 以交叉轴的终点对齐</option>
+					<option value="center">center 交叉轴的中点对齐</option>
+					<option value="stretch" selected>stretch（默认值） 如果项目未设置高度或设置为auto,将占满整个容器</option>
+					<option value="baseline">baseline 项目的第一行文字的基线对齐</option>
+				</select>
+			</div>
+
+			<div class="btn">
+				<button>设置高度</button></div>
+		</div>
+		<script type="text/javascript">
+			var doc = document,
+				contentAlignment = doc.querySelector("#contentAlignment"),
+				btn = doc.querySelector(".btn button"),
+				div = doc.querySelectorAll("#container div");
+			contentAlignment.onchange = function(evt) {
+				if(evt.target.value == "stretch") {
+					doc.getElementById("container").style.alignItems = evt.target.value;
+					btn.style.visibility = "visible";
+				} else {
+					btn.style.visibility = "hidden";
+					doc.getElementById("container").style.alignItems = evt.target.value;
+				}
+
+			};
+			btn.onclick = function() {
+				btn.classList.toggle("checked");
+				div.forEach(function(items) {
+					items.classList.toggle("item")
+				})
+			}
+		</script>
+	</body>
+
+</html>

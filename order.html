@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<style type="text/css">
+			#container {
+				display: flex;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<h2>order</h2>
+			<p>order定义 :项目的排列顺序。数值越小，排列越靠前，默认为0</p>
+			<h3>order属性值</h3>
+			<p>order: 0 (默认值)</p>
+			<div id="container">
+				<div class="first">text1</div>
+				<div class="second">text2</div>
+				<div class="third">text3</div>
+				<div class="fourth">text4</div>
+			</div>
+			<table class="input_box">
+
+				<tr>
+					<td><label for="first">第一个div</label></td>
+					<td><input type="text" id="first" placeholder="默认为0,越小越靠前" autofocus tabindex="-1"/></td>
+				</tr>
+				<tr>
+					<td><label for="second">第二个div</label></td>
+					<td><input type="text" id="second" placeholder="默认为0,越小越靠前" /></td>
+				</tr>
+				<tr>
+					<td><label for="third">第三个div</label></td>
+					<td><input type="text" id="third" placeholder="默认为0,越小越靠前" /></td>
+				</tr>
+				<tr>
+					<td><label for="fourth">第四个div</label></td>
+					<td><input type="text" id="fourth" placeholder="默认为0,越小越靠前" /></td>
+				</tr>
+			</table>
+			<script type="text/javascript">
+				var doc = document,
+					first = doc.querySelector("#first"),
+					second = doc.querySelector("#second"),
+					third = doc.querySelector("#third"),
+					fourth = doc.querySelector("#fourth"),
+					firstDiv = doc.querySelector(".first"),
+					secondDiv = doc.querySelector(".second"),
+					thirdDiv = doc.querySelector(".third"),
+					fourthDiv = doc.querySelector(".fourth");
+
+				first.onkeyup = function() {
+					firstDiv.style.order = this.value;
+				};
+				second.onkeyup = function() {
+					secondDiv.style.order = this.value;
+				};
+				third.onkeyup = function() {
+					thirdDiv.style.order = this.value;
+				};
+				fourth.onkeyup = function() {
+					fourthDiv.style.order = this.value;
+				};
+			</script>
+	</body>
+
+</html>

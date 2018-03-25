@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<style type="text/css">
+			#container>div {
+				width: 25%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<h2>flex-basis</h2>
+			<p>flex-basis定义 :在分配多余空间之前，项目占据的主轴空间。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</p>
+			<h3>flex-basis属性值</h3>
+			<p>flex-basis: auto(默认值)|length,它可以设置为px值，则项目将占据固定空间。</p>
+			<div id="container">
+				<div class="first"> text1</div>
+				<div class="second">text2</div>
+				<div class="third">text3</div>
+				<div class="fourth">text4</div>
+			</div>
+			<table class="input_box">
+
+				<tr>
+					<td><label for="first">第一个div</label></td>
+					<td><input type="text" id="first" placeholder="默认为auto,输入数字即可" autofocus tabindex="-auto,输入数字即可" /></td>
+				</tr>
+				<tr>
+					<td><label for="second">第二个div</label></td>
+					<td><input type="text" id="second" placeholder="默认为auto,输入数字即可" /></td>
+				</tr>
+				<tr>
+					<td><label for="third">第三个div</label></td>
+					<td><input type="text" id="third" placeholder="默认为auto,输入数字即可" /></td>
+				</tr>
+				<tr>
+					<td><label for="fourth">第四个div</label></td>
+					<td><input type="text" id="fourth" placeholder="默认为auto,输入数字即可" /></td>
+				</tr>
+			</table>
+			<script type="text/javascript">
+				var doc = document,
+					first = doc.querySelector("#first"),
+					second = doc.querySelector("#second"),
+					third = doc.querySelector("#third"),
+					fourth = doc.querySelector("#fourth"),
+					firstDiv = doc.querySelector(".first"),
+					secondDiv = doc.querySelector(".second"),
+					thirdDiv = doc.querySelector(".third"),
+					fourthDiv = doc.querySelector(".fourth");
+
+				first.onkeyup = function() {
+					this.value != "" ? firstDiv.style.flexBasis = this.value + "px" : firstDiv.style.flexBasis = "25%"
+				};
+				second.onkeyup = function() {
+					this.value != "" ? secondDiv.style.flexBasis = this.value + "px" : secondDiv.style.flexBasis = "25%"
+				};
+				third.onkeyup = function() {
+					this.value != "" ? thirdDiv.style.flexBasis = this.value + "px" : thirdDiv.style.flexBasis = "25%"
+				};
+				fourth.onkeyup = function() {
+					this.value != "" ? fourthDiv.style.flexBasis = this.value + "px" : fourthDiv.style.flexBasis = "25%"
+				};
+			</script>
+	</body>
+
+</html>

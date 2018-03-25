@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<style type="text/css">
+			#container>div {
+				height: auto;
+			}
+			
+			#container .item {
+				height: 60px;
+			}
+			
+			.contentAlignment_wrap {
+				display: flex;
+				flex-wrap: wrap;
+			}
+			
+			.btn {
+				display: flex;
+				justify-content: center;
+			}
+			
+			select {
+				margin-right: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<h2>align-self</h2>
+			<p>align-self定义 :允许单个项目与其他项目不一样的对齐方式，可覆盖align-items属性，默认值为auto，表示继承父元素的align-items属性。如果没有父元素，则为stretch/p>
+				<h3>align-self属性值</h3>
+				<p>align-self: auto(默认值) | flex-start| flex-end | center | stretch| baseline;</p>
+				<div id="container">
+					<div class="txtitem">text1</div>
+					<div class="txtitem">text2</div>
+					<div class="txtitem">text3</div>
+					<div class="txtitem">text4</div>
+				</div>
+				<div class="contentAlignment_wrap">
+					<select id="contentAlignment">
+						<option value="flex-start">flex-start 以交叉轴的起点对齐</option>
+						<option value="flex-end">flex-end 以交叉轴的终点对齐</option>
+						<option value="center">center 交叉轴的中点对齐</option>
+						<option value="stretch" selected>stretch（默认值） 如果项目未设置高度或设置为auto,将占满整个容器</option>
+						<option value="baseline">baseline 项目的第一行文字的基线对齐</option>
+					</select>
+					<select name="" id="selectbox">
+						<option value="0">text1</option>
+						<option value="1">text2</option>
+						<option value="2">text3</option>
+						<option value="3">text4</option>
+					</select>
+					<select name="" id="childcontentAlignment">
+						<option value="auto" selected>auto（默认值）表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</option>
+						<option value="flex-start">子元素的flex-start</option>
+						<option value="flex-end">子元素的flex-end</option>
+						<option value="center">子元素的center</option>
+						<option value="stretch">子元素的stretch</option>
+						<option value="baseline">子元素的baseline</option>
+					</select>
+				</div>
+
+				<div class="btn">
+					<button>设置高度</button></div>
+		</div>
+		<script type="text/javascript">
+			var doc = document,
+				selectbox = doc.querySelector("#selectbox"),
+				contentAlignment = doc.querySelector("#contentAlignment"),
+				childcontentAlignment = doc.querySelector("#childcontentAlignment"),
+				btn = doc.querySelector(".btn button"),
+				txtitem = doc.querySelectorAll(".txtitem"),
+				div = doc.querySelectorAll("#container div"),
+				container = doc.querySelector("#container"),
+				len = selectbox.options.length;
+			childcontentAlignment.onchange = function(ev) {
+				var num = selectbox.options[selectbox.selectedIndex].value,
+					val = ev.target.value;
+				txtitem[num].style.alignSelf = val;
+			}
+			contentAlignment.onchange = function(evt) {
+				if(evt.target.value == "stretch") {
+					doc.getElementById("container").style.alignItems = evt.target.value;
+					btn.style.visibility = "visible";
+				} else {
+					btn.style.visibility = "hidden";
+					doc.getElementById("container").style.alignItems = evt.target.value;
+				}
+			};
+			btn.onclick = function() {
+				btn.classList.toggle("checked");
+				div.forEach(function(items) {
+					items.classList.toggle("item")
+				})
+			}
+		</script>
+	</body>
+
+</html>

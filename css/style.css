@@ -1,0 +1,150 @@
+@media screen and (max-width:375px) {
+	body {
+		max-width: 1024px;
+		margin: 0 auto;
+		background: rgb(101, 101, 101);
+		font-size: 14px;
+	}
+	#container {
+		display: flex;
+		min-height: 200px;
+		width: 100%;
+		margin-top: 20px;
+		background-color: rgb(39, 40, 34);
+	}
+	img {
+		width: 100%;
+		height: auto;
+		max-width: 100%;
+		display: inline-block;
+	}
+	select {
+		margin-top: 20px;
+		cursor: pointer;
+		width: 40%;
+		min-width: 200px;
+		outline: none;
+		background: url(../img/down.png) rgb(211, 194, 148) right no-repeat;
+		padding: 10px 30px 10px 10px;
+		font-size: 16px;
+		border: 1px solid rgb(135, 220, 74);
+		appearance: none;
+		-webkit-appearance: none;
+	}
+	h1,
+	h2,
+	h3 {
+		color: #A0C8FF;
+	}
+	#container>div {
+		border: 2px solid rgb(39, 40, 34);
+		width: 10%;
+		height: 30%;
+		min-height: 30px;
+		min-width: 50px;
+		text-align: center;
+		background-color: #a0c8ff;
+	}
+	.contentAlignment_wrap {
+		display: flex;
+		justify-content: center;
+	}
+	p {
+		padding: 10px 5px;
+		background: #ddd;
+	}
+}
+
+@media screen and (min-width:376px) {
+	body {
+		max-width: 1024px;
+		margin: 0 auto;
+		background: rgb(101, 101, 101);
+	}
+	#container {
+		display: flex;
+		min-height: 200px;
+		width: 100%;
+		margin-top: 20px;
+		background-color: rgb(39, 40, 34);
+	}
+	img {
+		width: 100%;
+		height: auto;
+		max-width: 100%;
+		display: block;
+	}
+	select {
+		margin-top: 20px;
+		cursor: pointer;
+		width: 40%;
+		min-width: 130px;
+		outline: none;
+		background: url(../img/down.png) rgb(211, 194, 148) right no-repeat;
+		padding: 10px 30px 10px 10px;
+		font-size: 16px;
+		border: 1px solid rgb(135, 220, 74);
+		appearance: none;
+		-webkit-appearance: none;
+	}
+	h1,
+	h2,
+	h3 {
+		color: #A0C8FF;
+	}
+	#container>div {
+		border: 2px solid rgb(39, 40, 34);
+		width: 10%;
+		height: 30%;
+		min-height: 60px;
+		min-width: 50px;
+		text-align: center;
+		background-color: #a0c8ff;
+	}
+	.contentAlignment_wrap {
+		display: flex;
+		justify-content: center;
+	}
+	p {
+		padding: 10px 5px;
+		background: #ddd;
+	}
+}
+
+li {
+	list-style: none;
+}
+
+.flex_box {
+	display: flex;
+	justify-content: center;
+}
+
+button {
+	cursor: pointer;
+	outline: none;
+	min-width: 70px;
+	padding: 10px 5px;
+	margin: 10px 0;
+	border: 2px solid black;
+}
+
+.checked {
+	border: 2px solid red;
+}
+
+.flex_flow {
+	text-align: center;
+}
+
+.input_box {
+	display: flex;
+	justify-content: center;
+	margin-top: 40px;
+}
+
+.input_box input {
+	width: 95%;
+	border: 1px solid deepskyblue;
+	margin: 5px 0;
+}

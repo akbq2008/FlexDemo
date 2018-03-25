@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+	<body>
+		<div class="wrap">
+			<h2>flex-wrap</h2>
+			<p>flex-wrap定义 :如果一条轴线排不下，如何换行</p>
+			<h3>flex-wrap属性值</h3>
+			<p>flex-wrap: nowrap(默认值) | wrap | wrap-reverse;</p>
+			<img src="//cdn.suanliutudousi.com/18/3/24/clipboard.png" alt="error" />
+			<div id="container">
+				<div>text1</div>
+				<div>text2</div>
+				<div>text3</div>
+				<div>text4</div>
+				<div>text5</div>
+				<div>text6</div>
+				<div>text7</div>
+				<div>text8</div>
+				<div>text9</div>
+				<div>text10</div>
+				<div>text11</div>
+				<div>text12</div>
+				<div>text13</div>
+				<div>text14</div>
+				<div>text15</div>
+
+			</div>
+			<div class="contentAlignment_wrap">
+				<select id="contentAlignment">
+					<option value="nowrap" selected>nowrap（默认值）不换行</option>
+					<option value="wrap">wrap 换行并且第一行在上面</option>
+					<option value="wrap-reverse">wrap-reverse换行并且第一行在下面</option>
+				</select>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var contentAlignment = document.getElementById("contentAlignment");
+			contentAlignment.onchange = function(evt) {
+				document.getElementById("container").style.flexWrap = evt.target.value;
+			};
+		</script>
+	</body>
+
+</html>

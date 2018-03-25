@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<style type="text/css">
+			#container>div {
+				width: 25%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<h2>flex-shrink</h2>
+			<p>flex-shrink定义 :项目的缩小比例,默认为1，如果空间不足，该项目将缩小。如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。</p>
+			<h3>flex-shrink属性值</h3>
+			<p>flex-shrink: 1 (默认值)</p>
+			<div id="container">
+				<div class="first"> text1</div>
+				<div class="second">text2</div>
+				<div class="third">text3</div>
+				<div class="fourth">text4</div>
+			</div>
+			<table class="input_box">
+
+				<tr>
+					<td><label for="first">第一个div</label></td>
+					<td><input type="text" id="first" placeholder="默认为1" autofocus tabindex="-1" /></td>
+				</tr>
+				<tr>
+					<td><label for="second">第二个div</label></td>
+					<td><input type="text" id="second" placeholder="默认为1" /></td>
+				</tr>
+				<tr>
+					<td><label for="third">第三个div</label></td>
+					<td><input type="text" id="third" placeholder="默认为1" /></td>
+				</tr>
+				<tr>
+					<td><label for="fourth">第四个div</label></td>
+					<td><input type="text" id="fourth" placeholder="默认为1" /></td>
+				</tr>
+			</table>
+			<script type="text/javascript">
+				var doc = document,
+					first = doc.querySelector("#first"),
+					second = doc.querySelector("#second"),
+					third = doc.querySelector("#third"),
+					fourth = doc.querySelector("#fourth"),
+					firstDiv = doc.querySelector(".first"),
+					secondDiv = doc.querySelector(".second"),
+					thirdDiv = doc.querySelector(".third"),
+					fourthDiv = doc.querySelector(".fourth");
+
+				first.onkeyup = function() {
+					firstDiv.style.flexShrink = this.value;
+				};
+				second.onkeyup = function() {
+					secondDiv.style.flexShrink = this.value;
+				};
+				third.onkeyup = function() {
+					thirdDiv.style.flexShrink = this.value;
+				};
+				fourth.onkeyup = function() {
+					fourthDiv.style.flexShrink = this.value;
+				};
+			</script>
+	</body>
+
+</html>

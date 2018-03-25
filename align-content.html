@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<style type="text/css">
+			#container {
+				display: flex;
+				flex-wrap: wrap;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<h2>align-content</h2>
+			<p>align-content定义 :多根轴线的对齐方式，如果只有一根轴线，则该属性不起作用</p>
+			<h3>align-content属性值</h3>
+			<p>align-content: flex-start(默认值) | flex-end | center | stretch | space-between | space-around;</p>
+			<div id="container">
+				<div>text1</div>
+				<div>text2</div>
+				<div>text3</div>
+				<div>text4</div>
+				<div>text5</div>
+				<div>text6</div>
+				<div>text7</div>
+				<div>text8</div>
+				<div>text9</div>
+				<div>text10</div>
+				<div>text11</div>
+				<div>text12</div>
+				<div>text13</div>
+				<div>text14</div>
+				<div>text15</div>
+				<div>text16</div>
+
+			</div>
+			<div class="contentAlignment_wrap">
+				<select id="contentAlignment">
+					<option value="flex-start">flex-start 与交叉轴的起点对齐</option>
+					<option value="flex-end">flex-end 与交叉轴的终点对齐</option>
+					<option value="center">center 与交叉轴的中点对齐</option>
+					<option value="stretch" selected>stretch（默认值） 轴线占满整个交叉轴</option>
+					<option value="space-between">space-between 与交叉轴两端对齐，轴线之间的间隔平均分布</option>
+					<option value="space-around">space-around 每根轴线两侧的间隔都相等。轴线之间的间隔比轴线与边框的间隔大一倍。</option>
+				</select>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var contentAlignment = document.getElementById("contentAlignment");
+			contentAlignment.onchange = function(evt) {
+				document.getElementById("container").style.alignContent = evt.target.value;
+			};
+		</script>
+	</body>
+
+</html>
